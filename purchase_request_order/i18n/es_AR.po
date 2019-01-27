@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_request_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20190109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-27 17:02+0000\n"
+"PO-Revision-Date: 2019-01-27 17:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_request_order
+#: model:mail.template,body_html:purchase_request_order.email_template_request_approved
+msgid "\n"
+"                                    <p>Estimado\n"
+"                                    % if object.assigned_to:\n"
+"                                        ${object.assigned_to.name}\n"
+"                                    % endif\n"
+"                                    ,</p><p>\n"
+"                                    Tiene la solicitud de compra para aprobar con el No: <a href=$1>${object.name}</a>  </p>\n"
+"                                    <p>Si tiene alguna duda contáctenos.</p>\n"
+"\n"
+"                                    <p>Atentamente,</p>\n"
+"                                    ${object.create_uid.name}\n"
+"                \n"
+"            "
+msgstr "\n"
+"                                    <p>Estimado\n"
+"                                    % if object.assigned_to:\n"
+"                                        ${object.assigned_to.name}\n"
+"                                    % endif\n"
+"                                    ,</p><p>\n"
+"                                    Tiene la solicitud de compra para aprobar con el No: <a href=$1>${object.name}</a>  </p>\n"
+"                                    <p>Si tiene alguna duda contáctenos.</p>\n"
+"\n"
+"                                    <p>Atentamente,</p>\n"
+"                                    ${object.create_uid.name}\n"
+"                \n"
+"            "
+
+#. module: purchase_request_order
+#: model:ir.ui.view,arch_db:purchase_request_order.view_purchase_request_line_make_purchase_order_inherit
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: purchase_request_order
+#: model:ir.ui.view,arch_db:purchase_request_order.view_purchase_request_line_make_purchase_order_inherit
+msgid "Crear RFQ"
+msgstr "Crear RFQ"
+
+#. module: purchase_request_order
+#: model:ir.ui.view,arch_db:purchase_request_order.view_purchase_request_inherit_form
+msgid "Crear orden"
+msgstr "Crear orden"
+
+#. module: purchase_request_order
+#: model:ir.ui.view,arch_db:purchase_request_order.view_purchase_request_line_make_purchase_order_inherit
+msgid "Create RFQ"
+msgstr "Create RFQ"
+
+#. module: purchase_request_order
+#: model:ir.model.fields,field_description:purchase_request_order.field_purchase_request_dpto_id
+msgid "Departamento"
+msgstr "Departamento"
+
+#. module: purchase_request_order
+#: model:ir.ui.view,arch_db:purchase_request_order.view_purchase_request_line_make_purchase_order_inherit
+msgid "Details"
+msgstr "Detalles"
+
+#. module: purchase_request_order
+#: model:ir.ui.menu,name:purchase_request_order.menu_purchase_master_data
+msgid "Master data"
+msgstr "Datos maestros"
+
+#. module: purchase_request_order
+#: model:ir.model.fields,field_description:purchase_request_order.field_purchase_request_line_make_purchase_order_request_id
+msgid "Purchase Request"
+msgstr "Solicitud de compra"
+
+#. module: purchase_request_order
+#: model:ir.model,name:purchase_request_order.model_purchase_request_line
+msgid "Purchase Request Line"
+msgstr "Linea de requisición de compra"
+
+#. module: purchase_request_order
+#: model:ir.model,name:purchase_request_order.model_purchase_request_line_make_purchase_order
+msgid "Purchase Request Line Make Purchase Order"
+msgstr "Purchase Request Line Make Purchase Order"
+
+#. module: purchase_request_order
+#: model:ir.model,name:purchase_request_order.model_purchase_request
+msgid "Purchase Request Order"
+msgstr "Purchase Request Order"
+
+#. module: purchase_request_order
+#: model:mail.template,subject:purchase_request_order.email_template_request_approved
+msgid "Solicitud de compra para ${object.name or 'n/a' }"
+msgstr "Solicitud de compra para ${object.name or 'n/a' }"
+
+#. module: purchase_request_order
+#: model:ir.ui.menu,name:purchase_request_order.menu_purchase_transactions
+msgid "Transactions"
+msgstr "Transacciones"
+

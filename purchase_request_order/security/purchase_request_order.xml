@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Eficent Business and IT Consulting Services S.L.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+
+
+    <record model="ir.rule" id="purchase_request_users_rule">
+        <field name="name">Purchase Request users</field>
+        <field name="model_id" ref="model_purchase_request"/>
+        <field name="global" eval="True"/>
+         <field name="domain_force">['|',('requested_by','=',user.id),
+                                        ('assigned_to', '=',user.id)]</field>
+    </record>
+
+</odoo>

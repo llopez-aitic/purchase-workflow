@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--Email template -->
+        <record id="email_template_request_approved" model="mail.template">
+            <field name="name">Aviso a aprobador</field>
+            <field name="email_from">${(object.create_uid.email and '%s &lt;%s&gt;' % (object.create_uid.name, object.create_uid.email) or '')|safe}</field>
+            <field name="subject">Solicitud de compra para ${object.name or 'n/a' }</field>
+            <field name="model_id" ref="purchase_request.model_purchase_request"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.vendor_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                                    <p>Estimado
+                                    % if object.assigned_to:
+                                        ${object.assigned_to.name}
+                                    % endif
+                                    ,</p><p>
+                                    Tiene la solicitud de compra para aprobar con el No: <a href=$1>${object.name}</a>  </p>
+                                    <p>Si tiene alguna duda contáctenos.</p>
+
+                                    <p>Atentamente,</p>
+                                    ${object.create_uid.name}
+                ]]>
+            </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

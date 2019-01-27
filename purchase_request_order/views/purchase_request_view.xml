@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 Eficent Business and IT Consulting Services S.L.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+
+    <record model="ir.ui.view" id="view_purchase_request_inherit_form">
+        <field name="name">purchase.request.inherit.form</field>
+        <field name="model">purchase.request</field>
+        <field name="inherit_id" ref="purchase_request.view_purchase_request_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//header/button[@name='button_done']" position='replace'>
+                 <button name="button_send_to_order"
+                        states="approved"
+                        string="Crear orden"
+                        type="object"
+                        class="oe_highlight"
+                        groups="purchase_request.group_purchase_request_manager"/>
+           </xpath>
+
+             <xpath expr="//sheet/group/group/field[@name='assigned_to']" position='after'>
+                <field name="dpto_id" attrs="{'readonly': [('is_editable','=', False)]}"/>
+           </xpath>
+
+            <xpath expr="//sheet/group/group/field[@name='group_id']" position='replace'>
+           </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="view_purchase_request_order_search" model="ir.ui.view">
+        <field name="name">purchase.request.list.select</field>
+        <field name="model">purchase.request</field>
+        <field name="inherit_id" ref="purchase_request.view_purchase_request_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[9]" position='replace'>
+            </xpath>
+            <xpath expr="//field[@name='requested_by']" position='replace'>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!--Purchase request order menu Transacciones-->
+        <menuitem id="menu_purchase_transactions" name="Transactions"
+            parent="purchase.menu_procurement_management"
+            sequence="10"/>
+
+    <menuitem action="purchase.purchase_form_action"
+              id="purchase.menu_purchase_form_action"
+              parent="menu_purchase_transactions" sequence="20"/>
+
+    <menuitem action="purchase.purchase_rfq" id="purchase.menu_purchase_rfq"
+            parent="menu_purchase_transactions"
+            sequence="10"/>
+
+    <menuitem
+        id="purchase_request.menu_purchase_request_act"
+        sequence="30"
+        parent="menu_purchase_transactions"
+        action="purchase_request.purchase_request_form_action"
+        />
+
+    <menuitem
+        id="purchase_request.menu_purchase_request_line_act"
+        sequence="40"
+        parent="menu_purchase_transactions"
+        action="purchase_request.purchase_request_line_form_action"
+        />
+
+    <!--Eliminando menus que se repiten-->
+    <delete model="ir.ui.menu" id="purchase_request.menu_purchase_request_pro_mgt" />
+    <delete model="ir.ui.menu" id="purchase_request.purchase_request_line_form_action" />
+
+
+
+<!--Purchase request order menu Datos maestros-->
+    <menuitem id="menu_purchase_master_data" name="Master data"
+            parent="purchase.menu_procurement_management"
+            sequence="20"/>
+
+    <menuitem id="purchase.menu_procurement_management_supplier_name" name="Vendors"
+            parent="menu_purchase_master_data"
+            action="base.action_partner_supplier_form" sequence="10"/>
+
+    <menuitem
+           action="product.product_supplierinfo_type_action" id="purchase.menu_product_pricelist_action2_purchase"
+           parent="menu_purchase_master_data" sequence="20" groups="purchase.group_manage_vendor_price"/>
+
+    <menuitem name="Products" id="purchase.menu_procurement_partner_contact_form" action="purchase.product_normal_action_puchased"
+          parent="menu_purchase_master_data" sequence="30"/>
+
+    <menuitem id="purchase.product_product_menu" name="Product Variants" action="purchase.product_product_action"
+            parent="menu_purchase_master_data" sequence="40" groups="product.group_product_variant"/>
+
+    <menuitem
+        id="purchase_requisition.menu_purchase_requisition_pro_mgt"
+        sequence="50"
+        parent="menu_purchase_master_data"
+        action="purchase_requisition.action_purchase_requisition"/>
+
+
+
+
+</odoo>
