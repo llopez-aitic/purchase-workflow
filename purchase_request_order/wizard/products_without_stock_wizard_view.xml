@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_products_without_stock_wizard" model="ir.ui.view">
+        <field name="name">products.without.stock.wizard.name</field>
+        <field name="model">products.without.stock.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Crédito sobrepasado">
+                <group>
+                    <p >
+                        <H3><field name="message" /></H3>
+                    </p>
+                </group>
+                <footer>
+                    <button name="send" string="Crear solicitud de compra" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancelar" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
