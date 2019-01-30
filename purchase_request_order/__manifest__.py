@@ -21,6 +21,7 @@
         "security/purchase_request_order.xml",
         "wizard/purchase_request_line_make_purchase_order_view.xml",
         "wizard/products_without_stock_wizard_view.xml",
+        "wizard/purchase_requisition_line_delivery_wizard_view.xml",
     ],
     'demo': [
     ],

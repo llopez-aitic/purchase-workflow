@@ -10,7 +10,7 @@
               <form string="Purchase Requisition">
             <header>
                 <button name="button_draft"
-                        states="to_approve,approved,rejected,done"
+                        states="to_approve,approved,rejected,to_deliver,purchase,done"
                         string="Reset"
                         type="object"
                         groups="purchase_request.group_purchase_request_manager"/>
@@ -25,7 +25,25 @@
                         groups="purchase_request.group_purchase_request_manager"/>
                 <button name="button_done"
                         states="approved"
+                        string="Check stock"
+                        type="object"
+                        class="oe_highlight"
+                        groups="purchase_request.group_purchase_request_manager"/>
+                <button name="button_deliver_done"
+                        string="Prepare Deliver"
+                        attrs="{'invisible': [('delivery_flag','in', [0,2])]}"
+                        type="object"
+                        class="oe_highlight"
+                        groups="purchase_request.group_purchase_request_manager"/>
+                 <button name="button_deliver_move"
+                        attrs="{'invisible': [('delivery_flag','in', [0,1])]}"
                         string="Deliver"
+                        type="object"
+                        class="oe_highlight"
+                        groups="purchase_request.group_purchase_request_manager"/>
+                <button name="button_to_order_purchase"
+                        states="purchase"
+                        string="Purchase order"
                         type="object"
                         class="oe_highlight"
                         groups="purchase_request.group_purchase_request_manager"/>
@@ -34,8 +52,14 @@
                         string="Reject"
                         type="object"
                         groups="purchase_request.group_purchase_request_manager"/>
+                <button name="action_view_picking"
+                        string="Receive Products"
+                        states="done"
+                        type="object"
+                        groups="purchase_request.group_purchase_request_manager"/>
+
                 <field name="state" widget="statusbar"
-                       statusbar_visible="draft,to_approve,approved,done,rejected"
+                       statusbar_visible="draft,to_approve,approved,purchase,to_deliver,done,rejected"
                        statusbar_colors='{"approved":"blue"}'/>
             </header>
             <sheet>
@@ -59,6 +83,7 @@
                 </h1>
                 <group>
                     <group>
+                        <field name="delivery_flag" invisible="1"/>
                         <field name="requested_by" attrs="{'readonly': [('is_editable','=', False)]}"/>
                         <field name="assigned_to" attrs="{'readonly': [('is_editable','=', False)]}"/>
                         <field name="dpto_id" attrs="{'readonly': [('is_editable','=', False)]}"/>
@@ -75,6 +100,9 @@
                                attrs="{'readonly': [('is_editable','=', False)]}"/>
                         <field name="company_id" groups="base.group_multi_company" widget="selection"
                                attrs="{'readonly': [('is_editable','=', False)]}"/>
+                        <field name="stock_location"
+                               groups="purchase_request.group_purchase_request_manager" />
+
                     </group>
                 </group>
                 <notebook>
@@ -92,6 +120,7 @@
                                 <field name="is_editable" invisible="1"/>
                                 <field name="purchased_qty"/>
                                 <field name="purchase_state"/>
+                                <field name="state_line"/>
                             </tree>
                             <form>
                                 <sheet>
@@ -272,6 +301,7 @@
                        groups="analytic.group_analytic_accounting"/>
                 <field name="supplier_id"/>
                 <field name="cancelled" invisible="1"/>
+                <field name="state_line"/>
             </tree>
         </field>
     </record>
@@ -330,6 +360,7 @@
                             <field name="date_required"
                                    attrs="{'readonly': [('is_editable','=', False)]}"/>
                             <field name="cancelled"/>
+                            <field name="state_line"/>
                             <!--<field name="procurement_id"/>-->
                         </group>
                     </group>
