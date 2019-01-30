@@ -94,13 +94,4 @@
     <menuitem id="purchase.product_product_menu" name="Product Variants" action="purchase.product_product_action"
             parent="menu_purchase_master_data" sequence="40" groups="product.group_product_variant"/>
 
-    <menuitem
-        id="purchase_requisition.menu_purchase_requisition_pro_mgt"
-        sequence="50"
-        parent="menu_purchase_master_data"
-        action="purchase_requisition.action_purchase_requisition"/>
-
-
-
-
 </odoo>

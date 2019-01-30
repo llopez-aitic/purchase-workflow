@@ -199,19 +199,19 @@ msgstr "Compañía"
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_make_purchase_order_item_keep_description
 msgid "Copy descriptions to new PO"
-msgstr "Copiar descripción a PO"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.actions.act_window,name:purchase_request.action_purchase_request_line_make_purchase_order
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_line_make_purchase_order
 #, fuzzy
 msgid "Create RFQ"
-msgstr "Crear RFQ"
+msgstr "Creado por"
 
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_stock_move_created_purchase_request_line_id
 msgid "Created Purchase Request Line"
-msgstr "Crear linea de solicitud de compra"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_create_uid
@@ -504,7 +504,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_tree
 msgid "Purchase Request"
-msgstr "Solicitud de compra"
+msgstr ""
 
 #. module: purchase_request
 #: code:addons/purchase_request/models/purchase_order.py:66
@@ -551,17 +551,17 @@ msgstr ""
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_tree
 #, python-format
 msgid "Purchase Request Lines"
-msgstr "Linea de solicitud de compra"
+msgstr ""
 
 #. module: purchase_request
 #: model:res.groups,name:purchase_request.group_purchase_request_manager
 msgid "Purchase Request Manager"
-msgstr "Responsable/Aprobador"
+msgstr ""
 
 #. module: purchase_request
 #: model:res.groups,name:purchase_request.group_purchase_request_user
 msgid "Purchase Request User"
-msgstr "Usuario"
+msgstr ""
 
 #. module: purchase_request
 #: model:mail.message.subtype,description:purchase_request.mt_request_approved
@@ -635,7 +635,7 @@ msgstr "Cantidad en RFQ o PO"
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_make_purchase_order_item_product_qty
 msgid "Quantity to purchase"
-msgstr "Cantidad a comprar"
+msgstr ""
 
 #. module: purchase_request
 #: code:addons/purchase_request/wizard/purchase_request_line_make_purchase_order.py:247
@@ -680,7 +680,7 @@ msgstr "Número de requisición"
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_form
 msgid "Request approval"
-msgstr "Solicitar aprobación"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
@@ -703,7 +703,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 msgid "Request is to be approved"
-msgstr "Por ser aprobada"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_request_state
@@ -731,7 +731,7 @@ msgstr ""
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_form
 msgid "Reset"
-msgstr "Inicio"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.purchase_order_line_search_sub
@@ -792,7 +792,7 @@ msgstr ""
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_make_purchase_order_supplier_id
 msgid "Supplier"
-msgstr "Proveedor"
+msgstr ""
 
 #. module: purchase_request
 #: code:addons/purchase_request/models/purchase_order.py:19
@@ -879,7 +879,7 @@ msgstr ""
 #, python-format
 msgid ""
 "You can't request an approval for a purchase request which is empty. (%s)"
-msgstr "No puede mandar a aprobar una solicitud con el campo aprobador vacío"
+msgstr ""
 
 #. module: purchase_request
 #: code:addons/purchase_request/wizard/purchase_request_line_make_purchase_order.py:96

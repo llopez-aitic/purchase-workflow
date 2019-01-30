@@ -110,8 +110,10 @@ class PurchaseRequisitionDeliveryWizard(models.TransientModel):
     @api.multi
     def delivery_order(self):
         for item in self.item_ids:
-
-            item.line_id.write({'state_line': 'delivery', 'product_qty': item.product_available})
+            if item.product_qty < item.product_available:
+                raise UserError(
+                    _('The amount you have requested can not be greater than the actual'))
+            item.line_id.write({'state_line': 'delivery', 'product_qty': item.product_qty})
         self.requisition_order_id.change_state()
         return True
 

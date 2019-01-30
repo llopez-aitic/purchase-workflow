@@ -276,7 +276,7 @@
     <menuitem action="purchase_requisition_order_form_action"
               id="menu_requisition_order_form_action"
               name="Internal requisition"
-              parent="menu_purchase_transactions" sequence="20"/>
+              parent="purchase_request_order.menu_purchase_transactions" sequence="20"/>
 
 
 
@@ -394,6 +394,9 @@
             </form>
         </field>
     </record>
+
+
+
 
 
 
